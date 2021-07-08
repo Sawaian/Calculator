@@ -1,0 +1,8 @@
+.numPad{
+    display: grid;
+    margin: auto;
+}
+.buttons{
+    display: block;
+    
+}
