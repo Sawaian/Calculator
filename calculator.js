@@ -1,27 +1,33 @@
-let arithmetric = 0;
-let a = parseInt(2);
-let b = parseInt(2);
-let calculation = [0, ];
+let num1 = parseInt("2");
+let num2 = parseInt("2");
+let result = "0";
 
+//numPad variables
 const oneButton = document.querySelector("#one");
+const twoButton = document.querySelector("#two");
+
+// operands
+const sumButton = document.querySelector("#addition");
+
+
+
+//numPad buttons. 
 oneButton.addEventListener('click', ()=>{
-    a = parseInt(1);
-    calculation.push("1");
-    console.log("1");
-    console.log(calculation)
+  num1 += "1";
+  console.log(num1);
 });
 
-const additionButton = document.querySelector("#addition");
-additionButton.addEventListener('click', ()=>{
-    console.log(addition());
-})
 
-let addition = function(){
-    return parseInt(calculation) + b;
-}
+twoButton.addEventListener('click', ()=>{
+  num1 += "2";
+});
 
 
+    sumButton.addEventListener('click', ()=>{
+      console.log(operation.add);
+    });
 
-console.log(addition());
-
-
+  const operation = {
+    add: num1 + num2,
+    subtraction: " -",
+  }
