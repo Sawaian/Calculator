@@ -1,40 +1,58 @@
-let num1 = parseInt("0");
-let num2 = parseInt("0");
-let result = "0";
 
-//numPad variables
-const numpPad = document.querySelector("#numPad")
-const oneButton = document.querySelector("#one");
-const twoButton = document.querySelector("#two");
 
-// operands
-const sumButton = document.querySelector("#addition");
 
-// when button is pressed, it is logged to num1. When the + is hit, it is moved to num 2. 
-// Objective, when + is hit, change button inputs to num2. 
-//
+// const numBtn = document.querySelectorAll("#numbutton");
+// numBtn.forEach(numutton, function(){
+//   addEventListener('click', ()=>{
+//     console.log("pressed.");
+//   });
+// });
 
-//numPad buttons. 
-oneButton.addEventListener('click', ()=>{
-  num1 += "1";
-  console.log(num1);
+const sum = document.querySelector('#addition');
+sum.addEventListener('click', function(){
+operandUsed = ' +';
+console.log("clicked addition");
+console.log(operandUsed);
+});
+
+const sub = document.querySelector('#subtraction');
+sub.addEventListener('click', function(){
+  operandUsed = ' -';
+  console.log("clicked addition");
+  console.log(operandUsed);
+})
+
+const equalSign = document.querySelector('#equals');
+equalSign.addEventListener('click', function(){
+  equals();
+  console.log("clicked equals");
 });
 
 
-twoButton.addEventListener('click', ()=>{
-  num1 += "2";
-});
+let value1 = ' ';
+let operandUsed = ' ';
+let a = 2;
+let b = 2;
 
 
-    sumButton.addEventListener('click', ()=>{
-      console.log(operation.add);
-    });
 
-
-  const operation = {
-    add: num1 + num2,
-    subtraction: num1 - num2,
-    multiply: num1 * num2,
-    division: num1 / num2,
+function equals(){
+  if(operandUsed === ' +'){
+    console.log(operation.add);
   }
-  
+  if(operandUsed === ' -'){
+    console.log(operation.sub);
+  }
+
+
+}
+const operation = {
+  add: (a, b) => {return a + b},
+  sub: (a, b) =>{return a - b},
+}
+
+
+
+// function addition(){
+//   return a + b;
+// }
