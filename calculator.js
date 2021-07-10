@@ -1,17 +1,21 @@
 
 
 
-let value1 = ' ';
+
+
+let previousNumber = ' ';
 let operandUsed = ' ';
 let a = 2;
 let b = 2;
 
-// const numBtn = document.querySelectorAll("#numbutton");
-// numBtn.forEach(numutton, function(){
-//   addEventListener('click', ()=>{
-//     console.log("pressed.");
-//   });
-// });
+
+const numBtn = document.querySelectorAll('.numbutton');
+numBtn.forEach(function(numBtn){
+  numBtn.addEventListener('click', function(){
+   let numInput = document.getElementsByClassName('numButton').textContent;
+   console.log(numInput);
+  });
+});
 
 const sum = document.querySelector('#addition');
 sum.addEventListener('click', function(){
