@@ -1,6 +1,11 @@
 
 
 
+let value1 = ' ';
+let operandUsed = ' ';
+let a = 2;
+let b = 2;
+
 // const numBtn = document.querySelectorAll("#numbutton");
 // numBtn.forEach(numutton, function(){
 //   addEventListener('click', ()=>{
@@ -29,29 +34,19 @@ equalSign.addEventListener('click', function(){
 });
 
 
-let value1 = ' ';
-let operandUsed = ' ';
-let a = 2;
-let b = 2;
-
-
-
 function equals(){
   if(operandUsed === ' +'){
-    console.log(operation.add);
+    console.log(operation.add(a, b));
   }
   if(operandUsed === ' -'){
-    console.log(operation.sub);
+    console.log(operation.sub(a, b));
   }
 
-
 }
-const operation = {
+let operation = {
   add: (a, b) => {return a + b},
   sub: (a, b) =>{return a - b},
 }
-
-
 
 // function addition(){
 //   return a + b;
