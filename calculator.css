@@ -1,8 +1,6 @@
 .numPad{
     display: grid;
     justify-content: stretch;
-    width: 25vw;
-    height: 25vw;
     margin: auto;
     border: 5px solid red;
 }

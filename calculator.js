@@ -3,25 +3,32 @@
 
 
 
+let currentNumber  = ' ';
 let previousNumber = ' ';
 let operandUsed = ' ';
-let a = 2;
-let b = 2;
+let a = currentNumber;
+let b = previousNumber;
+
 
 
 const numBtn = document.querySelectorAll('.numbutton');
 numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
-   let numInput = document.getElementsByClassName('numButton').textContent;
-   console.log(numInput);
+    currentNumber += this.textContent;
+   console.log(currentNumber);
   });
 });
 
 const sum = document.querySelector('#addition');
 sum.addEventListener('click', function(){
 operandUsed = ' +';
+a = currentNumber;
+currentNumber = ' ';
 console.log("clicked addition");
 console.log(operandUsed);
+console.log(currentNumber);
+console.log(a);
+console.log(b);
 });
 
 const sub = document.querySelector('#subtraction');
