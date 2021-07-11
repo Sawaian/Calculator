@@ -51,7 +51,3 @@ let operation = {
   add: (a, b) => {return a + b},
   sub: (a, b) =>{return a - b},
 }
-
-// function addition(){
-//   return a + b;
-// }

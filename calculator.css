@@ -1,9 +1,16 @@
 .numPad{
     display: grid;
+    justify-content: stretch;
+    width: 25vw;
+    height: 25vw;
+    margin: auto;
+    border: 5px solid red;
 }
-.buttons{
+.numbutton{
     display: block;
     color: blue;
-    
+    width: 25px;
+    height: 25px;
+    margin: auto;
     
 }
