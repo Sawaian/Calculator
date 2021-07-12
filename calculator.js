@@ -9,6 +9,7 @@ const numBtn = document.querySelectorAll('.numbutton');
  numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
    currentNumber += this.textContent;
+   document.getElementById('display').textContent = (currentNumber);
   console.log(currentNumber);
   });
 });
@@ -20,18 +21,23 @@ const operator = document.querySelectorAll('.operator');
  operator.forEach(function(operator){
   operator.addEventListener('click', function(){
     operandUsed = this.textContent;
-     a = currentNumber;
-     document.getElementById('display').textContent = (operandUsed);
-    currentNumber = '';
-   console.log(operandUsed);
-  })
+     operatorClicked();
+    console.log(operandUsed);
+  });
 });
+
+function operatorClicked(){
+  a = currentNumber;
+  document.getElementById('display').textContent = (operandUsed);
+  currentNumber = '';
+}
 
 const equalSign = document.querySelector('#equals');
     equalSign.addEventListener('click', function(){
       b = currentNumber;
       toBeNumbers();
       equals();
+      document.getElementById('display').textContent = (currentNumber);
     });
 
 // const aClear = document.querySelector('#clear');
@@ -47,16 +53,16 @@ function toBeNumbers(){
 
 function equals(){
       if(operandUsed === '+'){
-        console.log(operation.add(a, b));
+        currentNumber = operation.add(a, b);
       }
       if(operandUsed === '-'){
-        console.log(operation.sub(a, b));
+        currentNumber = operation.sub(a, b);
       }
       if(operandUsed === '*'){
-        console.log(operation.multiply(a, b));
+        currentNumber = operation.multiply(a, b);
       }
       if(operandUsed === '/'){
-        console.log(operation.divide(a, b));
+        currentNumber = operation.divide(a, b);
       }
     }
 
