@@ -1,21 +1,15 @@
 
-
-
-
-
 let currentNumber  = '';
 let previousNumber = ' ';
-let operandUsed = ' ';
+let operandUsed = '';
 let a = currentNumber;
 let b = previousNumber;
 
-
-
 const numBtn = document.querySelectorAll('.numbutton');
-numBtn.forEach(function(numBtn){
+ numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
-    currentNumber += this.textContent;
-   console.log(currentNumber);
+   currentNumber += this.textContent;
+  console.log(currentNumber);
   });
 });
 
@@ -23,34 +17,22 @@ numBtn.forEach(function(numBtn){
 // Operand buttons that store the operator within the variable operandUsed.
 
 const operator = document.querySelectorAll('.operator');
-operator.forEach(function(operator){
+ operator.forEach(function(operator){
   operator.addEventListener('click', function(){
     operandUsed = this.textContent;
-    a = currentNumber;
+     a = currentNumber;
+     document.getElementById('display').textContent = (operandUsed);
     currentNumber = '';
-    console.log(operandUsed);
+   console.log(operandUsed);
   })
-})
-// const sum = document.querySelector('#addition');
-// sum.addEventListener('click', function(){
-// operandUsed = ' +';
-// a = currentNumber;
-// currentNumber = '';
-// console.log("clicked addition");
-// });
-
-// const sub = document.querySelector('#subtraction');
-// sub.addEventListener('click', function(){
-//   operandUsed = ' -';
-//   console.log(operandUsed);
-// })
+});
 
 const equalSign = document.querySelector('#equals');
-equalSign.addEventListener('click', function(){
-  b = currentNumber;
-  toBeNumbers();
-  equals();
-});
+    equalSign.addEventListener('click', function(){
+      b = currentNumber;
+      toBeNumbers();
+      equals();
+    });
 
 // const aClear = document.querySelector('#clear');
 // aClear.addEventListeneer('click', function(){
@@ -59,25 +41,24 @@ equalSign.addEventListener('click', function(){
 
 
 function toBeNumbers(){
-  a = parseInt(a);
-  b = parseInt(b);}
+      a = parseInt(a);
+      b = parseInt(b);}
 
 
 function equals(){
-  if(operandUsed === '+'){
-    console.log(operation.add(a, b));
-  }
-  if(operandUsed === '-'){
-    console.log(operation.sub(a, b));
-  }
-  if(operandUsed === '*'){
-    console.log(operation.multiply(a, b));
-  }
-  if(operandUsed === '/'){
-    console.log(operation.divide(a, b));
-  }
-
-}
+      if(operandUsed === '+'){
+        console.log(operation.add(a, b));
+      }
+      if(operandUsed === '-'){
+        console.log(operation.sub(a, b));
+      }
+      if(operandUsed === '*'){
+        console.log(operation.multiply(a, b));
+      }
+      if(operandUsed === '/'){
+        console.log(operation.divide(a, b));
+      }
+    }
 
 function allClear(){
   a = '';

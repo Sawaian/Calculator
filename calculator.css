@@ -4,11 +4,20 @@
     margin: auto;
     border: 5px solid red;
 }
-.numbutton{
+.numbutton, .operator{
     display: block;
     color: blue;
     width: 25px;
     height: 25px;
     margin: auto;
+    grid-column: auto;
+    grid-row: auto;
     
+}
+
+.displayField{
+    display: block;
+    border-radius: 10px;
+    border: 5px solid;
+    background-color: azure;
 }
