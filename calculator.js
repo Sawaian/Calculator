@@ -19,28 +19,44 @@ numBtn.forEach(function(numBtn){
   });
 });
 
-const sum = document.querySelector('#addition');
-sum.addEventListener('click', function(){
-operandUsed = ' +';
-a = currentNumber;
-currentNumber = '';
-console.log("clicked addition");
-});
 
-const sub = document.querySelector('#subtraction');
-sub.addEventListener('click', function(){
-  operandUsed = ' -';
-  console.log("clicked addition");
-  console.log(operandUsed);
+// Operand buttons that store the operator within the variable operandUsed.
+
+const operator = document.querySelectorAll('.operator');
+operator.forEach(function(operator){
+  operator.addEventListener('click', function(){
+    operandUsed = this.textContent;
+    a = currentNumber;
+    currentNumber = '';
+    console.log(operandUsed);
+  })
 })
+// const sum = document.querySelector('#addition');
+// sum.addEventListener('click', function(){
+// operandUsed = ' +';
+// a = currentNumber;
+// currentNumber = '';
+// console.log("clicked addition");
+// });
+
+// const sub = document.querySelector('#subtraction');
+// sub.addEventListener('click', function(){
+//   operandUsed = ' -';
+//   console.log(operandUsed);
+// })
 
 const equalSign = document.querySelector('#equals');
 equalSign.addEventListener('click', function(){
   b = currentNumber;
   toBeNumbers();
   equals();
-  console.log("clicked equals");
 });
+
+// const aClear = document.querySelector('#clear');
+// aClear.addEventListeneer('click', function(){
+//     allClear(a, b);
+// });
+
 
 function toBeNumbers(){
   a = parseInt(a);
@@ -48,16 +64,29 @@ function toBeNumbers(){
 
 
 function equals(){
-  if(operandUsed === ' +'){
-    console.log(b);
+  if(operandUsed === '+'){
     console.log(operation.add(a, b));
   }
-  if(operandUsed === ' -'){
+  if(operandUsed === '-'){
     console.log(operation.sub(a, b));
+  }
+  if(operandUsed === '*'){
+    console.log(operation.multiply(a, b));
+  }
+  if(operandUsed === '/'){
+    console.log(operation.divide(a, b));
   }
 
 }
-let operation = {
-  add: (a, b) => {return a + b},
-  sub: (a, b) =>{return a - b},
+
+function allClear(){
+  a = '';
+  b = '';
 }
+let operation = {
+  add: (a, b) =>  {return a + b},
+  sub: (a, b) => {return a - b},
+  multiply: (a, b) => {return a * b},
+  divide: (a, b) => {return a / b},
+}
+
