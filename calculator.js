@@ -3,7 +3,7 @@
 
 
 
-let currentNumber  = ' ';
+let currentNumber  = '';
 let previousNumber = ' ';
 let operandUsed = ' ';
 let a = currentNumber;
@@ -23,12 +23,8 @@ const sum = document.querySelector('#addition');
 sum.addEventListener('click', function(){
 operandUsed = ' +';
 a = currentNumber;
-currentNumber = ' ';
+currentNumber = '';
 console.log("clicked addition");
-console.log(operandUsed);
-console.log(currentNumber);
-console.log(a);
-console.log(b);
 });
 
 const sub = document.querySelector('#subtraction');
@@ -40,13 +36,20 @@ sub.addEventListener('click', function(){
 
 const equalSign = document.querySelector('#equals');
 equalSign.addEventListener('click', function(){
+  b = currentNumber;
+  toBeNumbers();
   equals();
   console.log("clicked equals");
 });
 
+function toBeNumbers(){
+  a = parseInt(a);
+  b = parseInt(b);}
+
 
 function equals(){
   if(operandUsed === ' +'){
+    console.log(b);
     console.log(operation.add(a, b));
   }
   if(operandUsed === ' -'){
