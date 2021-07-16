@@ -1,16 +1,17 @@
 
 let currentNumber  = '';
-let previousNumber = ' ';
+let previousNumber = '';
+let heldNumber = '';
 let operandUsed = '';
-let a = currentNumber;
-let b = previousNumber;
+let  a = previousNumber;
+let  b = heldNumber;
+
 
 const numBtn = document.querySelectorAll('.numbutton');
  numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
    currentNumber += this.textContent;
    document.getElementById('display').textContent = (currentNumber);
-  console.log(currentNumber);
   });
 });
 
@@ -20,56 +21,68 @@ const numBtn = document.querySelectorAll('.numbutton');
 const operator = document.querySelectorAll('.operator');
  operator.forEach(function(operator){
   operator.addEventListener('click', function(){
-    operandUsed = this.textContent;
+     operandUsed = this.textContent;
      operatorClicked();
-    console.log(operandUsed);
   });
 });
 
 function operatorClicked(){
-  a = currentNumber;
+  heldNumber = currentNumber;
+  a = previousNumber;
   document.getElementById('display').textContent = (operandUsed);
   currentNumber = '';
 }
 
 const equalSign = document.querySelector('#equals');
     equalSign.addEventListener('click', function(){
-      b = currentNumber;
-      toBeNumbers();
+      console.log(a);
+      console.log(b);
       equals();
-      document.getElementById('display').textContent = (currentNumber);
+      document.getElementById('display').textContent = (previousNumber);
     });
 
-// const aClear = document.querySelector('#clear');
-// aClear.addEventListeneer('click', function(){
-//     allClear(a, b);
-// });
+    const clear = document.querySelector('#clear');
+    clear.addEventListener('click', function(){
+      allClear();
+    });
+
+// const del = document.querySelector('#delete');
+//     del.addEventListener('click', function(){
+//       currentNumber = currentNumber.slice(0, -1); 
+//     });
+
 
 
 function toBeNumbers(){
+      b = heldNumber;
       a = parseInt(a);
       b = parseInt(b);}
 
 
 function equals(){
+      toBeNumbers();  
+  
       if(operandUsed === '+'){
-        currentNumber = operation.add(a, b);
+        previousNumber = operation.add(a, b);
       }
       if(operandUsed === '-'){
-        currentNumber = operation.sub(a, b);
+        previousNumber = operation.sub(a, b);
       }
       if(operandUsed === '*'){
-        currentNumber = operation.multiply(a, b);
+        previousNumber = operation.multiply(a, b);
       }
       if(operandUsed === '/'){
-        currentNumber = operation.divide(a, b);
+        previousNumber = operation.divide(a, b);
       }
     }
 
 function allClear(){
-  a = '';
-  b = '';
+  previousNumber = '';
+  currentNumber = '';
+  document.getElementById('display').textContent = 0;
+
 }
+
 let operation = {
   add: (a, b) =>  {return a + b},
   sub: (a, b) => {return a - b},

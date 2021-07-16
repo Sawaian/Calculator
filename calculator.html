@@ -2,11 +2,10 @@
 <html>
     <link rel="stylesheet" href="calculator.css">
     <title>Calculator</title>
-    <body>
-        <div class="displayField" id="display">
-            
-        </div>        
-        <div class="numPad">
+    <body>  
+        <div class="calcBody" id="frame"> 
+        <div class="displayField" id="display"> </div>
+        <div class="calculator">
                 <button class="numbutton" id="one">1</button>
                 <button class="numbutton" id="two">2</button>
                 <button class="numbutton" id="three">3</button>
@@ -17,18 +16,16 @@
                 <button class="numbutton" id="eight">8</button>
                 <button class="numbutton" id="nine">9</button>
                 <button class="numbutton" id="zero">0</button>
-        </div>
-        <div class="operands">
-            <div class="operator" id="addition"><button>+</button></div>
-            <div class="operator" id="subtraction"><button>-</button></div>
-            <div class="operator" id="multiply"><button>*</button></div>
-            <div class="operator" id="divide"><button>/</button></div>
-        </div>
-
-        <button class="button" id="equals"> = </button> 
-        <button class="button" id="clear">AC</button>
-        
-
+                <button class="operator" id="add">+</button>
+                <button class="operator" id="subtract">-</button>
+                <button class="operator" id="multiply">*</button>
+                <button class="operator" id="division">/</button>
+                <button class="equalSign" id="equals"> = </button> 
+                <button class="button" id="clear">AC</button>
+                <button class="operator" id="delete">del</button>
+            </div>
+         </div>
+    </div>
     </body>
 
     <script SRC="calculator.js"></script>

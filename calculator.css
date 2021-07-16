@@ -1,23 +1,131 @@
-.numPad{
+.calculator{
     display: grid;
-    justify-content: stretch;
-    margin: auto;
-    border: 5px solid red;
+    grid-template-columns: repeat(5, 20fr);
+    grid-template-rows: repeat(6, 15fr);
+    width: 70vh;
+    height: 80vh;
+    justify-content: center;
+    align-content: center;
 }
-.numbutton, .operator{
-    display: block;
-    color: blue;
-    width: 25px;
-    height: 25px;
-    margin: auto;
-    grid-column: auto;
-    grid-row: auto;
-    
+
+#clear{
+    grid-row-start: 1;
+    grid-column: span 2;
+}
+
+
+#zero{
+   grid-row-start: 5;
+   grid-column: span 2;
+}
+
+#one{
+    grid-row-start:2;
+    grid-column-start:1;
+}
+
+#two{
+    grid-row-start:2;
+    grid-column-start:2;
+}
+
+#three{
+    grid-row-start:2;
+    grid-column-start: 3;
+}
+
+#four{
+    grid-row-start:3;
+    grid-column-start: 1;
+}
+
+#five{
+    grid-row-start:3;
+    grid-column-start: 2;
+}
+
+#six{
+    grid-row-start:3;
+    grid-column-start: 3;
+}
+
+#seven{
+    grid-row-start:4;
+    grid-column-start: 1;
+}
+
+#eight{
+    grid-row-start:4;
+    grid-column-start: 2;
+}
+
+#nine{
+    grid-row-start:4;
+    grid-column-start: 3;
+}
+
+#subtract{
+    grid-row-start:3;
+    grid-column-start: 4;
+}
+
+#multiply{
+    grid-row-start:2;
+    grid-column-start: 4;
+}
+
+#division{
+    grid-row-start:1;
+    grid-column-start: 4;
+}
+
+#add{
+    grid-row-start:4;
+    grid-column-start: 4;
+}
+
+#equals{
+    grid-row-start:5;
+    grid-column-start: 4;
+}
+
+#delete{
+    grid-row-start: 1;
+    grid-column-start: 3;
+}
+
+#frame{
+    display: grid;
+    max-width: 60vh;
+    max-height: 90vh;
+    background-color: pink;
+    border-color: black;
+    border: solid 3px black;
+    border-radius: 10px;
+    justify-content: left;
 }
 
 .displayField{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    min-height: 80px;
+    max-width: 55vh;
+    padding: 10px;
+    margin: 2px;
     border-radius: 10px;
-    border: 5px solid;
-    background-color: azure;
+    margin-bottom: 10px;
+    font-size: 20px;
+    justify-content: right;
+    align-content: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: lightgray;
+    border: solid;
+}
+
+.numButton{
+    display: block; 
+    grid-area: numPad;
+    grid-column: 1fr;
+    grid-row: 1fr;
 }
