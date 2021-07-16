@@ -1,68 +1,53 @@
 
-let currentNumber  = '';
-let previousNumber = '';
-let heldNumber = '';
-let operandUsed = '';
-let  a = previousNumber;
-let  b = heldNumber;
+ let currentNumber  = '';
+ let a = '';
+ let b = '';
+ let operandUsed = '';
+
 
 
 const numBtn = document.querySelectorAll('.numbutton');
  numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
    currentNumber += this.textContent;
-<<<<<<< HEAD
+   b = currentNumber;
    document.getElementById('display').textContent = (currentNumber);
-=======
-  console.log(currentNumber);
->>>>>>> parent of 30eb6ae (It's virtually done.)
   });
 });
-
 
 // Operand buttons that store the operator within the variable operandUsed.
 
 const operator = document.querySelectorAll('.operator');
  operator.forEach(function(operator){
   operator.addEventListener('click', function(){
-<<<<<<< HEAD
      operandUsed = this.textContent;
      operatorClicked();
   });
 });
 
 function operatorClicked(){
-  heldNumber = currentNumber;
-  a = previousNumber;
+  a = currentNumber;
   document.getElementById('display').textContent = (operandUsed);
   currentNumber = '';
 }
 
-=======
-    operandUsed = this.textContent;
-     a = currentNumber;
-     document.getElementById('display').textContent = (operandUsed);
-    currentNumber = '';
-   console.log(operandUsed);
-  })
-});
-
->>>>>>> parent of 30eb6ae (It's virtually done.)
 const equalSign = document.querySelector('#equals');
     equalSign.addEventListener('click', function(){
-      console.log(a);
-      console.log(b);
+      b = currentNumber;
+      numberThem();
       equals();
-<<<<<<< HEAD
-      document.getElementById('display').textContent = (previousNumber);
+      document.getElementById('display').textContent = (a);
     });
 
     const clear = document.querySelector('#clear');
     clear.addEventListener('click', function(){
       allClear();
-=======
->>>>>>> parent of 30eb6ae (It's virtually done.)
     });
+
+  function numberThem(){
+    a = parseInt(a);
+    b = parseInt(b);
+  }
 
 // const del = document.querySelector('#delete');
 //     del.addEventListener('click', function(){
@@ -70,45 +55,23 @@ const equalSign = document.querySelector('#equals');
 //     });
 
 
-
-function toBeNumbers(){
-      b = heldNumber;
-      a = parseInt(a);
-      b = parseInt(b);}
-
-
 function equals(){
-      toBeNumbers();  
-  
       if(operandUsed === '+'){
-<<<<<<< HEAD
-        previousNumber = operation.add(a, b);
+        a = operation.add(a, b);
       }
       if(operandUsed === '-'){
-        previousNumber = operation.sub(a, b);
+        a = operation.sub(a, b);
       }
       if(operandUsed === '*'){
-        previousNumber = operation.multiply(a, b);
+       a = operation.multiply(a, b);
       }
       if(operandUsed === '/'){
-        previousNumber = operation.divide(a, b);
-=======
-        console.log(operation.add(a, b));
-      }
-      if(operandUsed === '-'){
-        console.log(operation.sub(a, b));
-      }
-      if(operandUsed === '*'){
-        console.log(operation.multiply(a, b));
-      }
-      if(operandUsed === '/'){
-        console.log(operation.divide(a, b));
->>>>>>> parent of 30eb6ae (It's virtually done.)
+       a = operation.divide(a, b);
       }
     }
 
 function allClear(){
-  previousNumber = '';
+  a = '';
   currentNumber = '';
   document.getElementById('display').textContent = 0;
 
