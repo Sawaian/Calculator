@@ -11,7 +11,11 @@ const numBtn = document.querySelectorAll('.numbutton');
  numBtn.forEach(function(numBtn){
   numBtn.addEventListener('click', function(){
    currentNumber += this.textContent;
+<<<<<<< HEAD
    document.getElementById('display').textContent = (currentNumber);
+=======
+  console.log(currentNumber);
+>>>>>>> parent of 30eb6ae (It's virtually done.)
   });
 });
 
@@ -21,6 +25,7 @@ const numBtn = document.querySelectorAll('.numbutton');
 const operator = document.querySelectorAll('.operator');
  operator.forEach(function(operator){
   operator.addEventListener('click', function(){
+<<<<<<< HEAD
      operandUsed = this.textContent;
      operatorClicked();
   });
@@ -33,17 +38,30 @@ function operatorClicked(){
   currentNumber = '';
 }
 
+=======
+    operandUsed = this.textContent;
+     a = currentNumber;
+     document.getElementById('display').textContent = (operandUsed);
+    currentNumber = '';
+   console.log(operandUsed);
+  })
+});
+
+>>>>>>> parent of 30eb6ae (It's virtually done.)
 const equalSign = document.querySelector('#equals');
     equalSign.addEventListener('click', function(){
       console.log(a);
       console.log(b);
       equals();
+<<<<<<< HEAD
       document.getElementById('display').textContent = (previousNumber);
     });
 
     const clear = document.querySelector('#clear');
     clear.addEventListener('click', function(){
       allClear();
+=======
+>>>>>>> parent of 30eb6ae (It's virtually done.)
     });
 
 // const del = document.querySelector('#delete');
@@ -63,6 +81,7 @@ function equals(){
       toBeNumbers();  
   
       if(operandUsed === '+'){
+<<<<<<< HEAD
         previousNumber = operation.add(a, b);
       }
       if(operandUsed === '-'){
@@ -73,6 +92,18 @@ function equals(){
       }
       if(operandUsed === '/'){
         previousNumber = operation.divide(a, b);
+=======
+        console.log(operation.add(a, b));
+      }
+      if(operandUsed === '-'){
+        console.log(operation.sub(a, b));
+      }
+      if(operandUsed === '*'){
+        console.log(operation.multiply(a, b));
+      }
+      if(operandUsed === '/'){
+        console.log(operation.divide(a, b));
+>>>>>>> parent of 30eb6ae (It's virtually done.)
       }
     }
 
