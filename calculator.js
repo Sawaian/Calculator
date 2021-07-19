@@ -58,10 +58,12 @@ function numInput(){
 // 1. Displays the operand chosen and changes currentNumber to select B.
         function operatorClicked(){
           document.getElementById('display').textContent = (operandUsed);
-          if(operandUsed === previousOperand){
+          
+          if(operandUsed === previousOperand && num2 !== ''){
             operate();
            operandUsed ==='0';
           }
+          
           else
            { currentNumber = '';
              previousOperand = operandUsed;
@@ -73,9 +75,14 @@ function numInput(){
           const equalSign = document.querySelector('#equals');
               equalSign.addEventListener('click', function(){
                 equal = '=';
+                if(operandUsed === '/' && num1 === '0' || num2 === '0'){
+                  document.getElementById('display').textContent = 'Error';
+                  num1 = '';
+                  num2 = '';
+                }else{
                   calculation();
                   previousOperand = operandUsed
-              });
+              }});
 
 
 //   1. Checks if either the operand is empty or if b is empty. If yes to either, we give B a's value and calculate. 

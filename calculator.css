@@ -20,17 +20,17 @@
 }
 
 #one{
-    grid-row-start:2;
+    grid-row-start:4;
     grid-column-start:1;
 }
 
 #two{
-    grid-row-start:2;
+    grid-row-start:4;
     grid-column-start:2;
 }
 
 #three{
-    grid-row-start:2;
+    grid-row-start:4;
     grid-column-start: 3;
 }
 
@@ -50,17 +50,17 @@
 }
 
 #seven{
-    grid-row-start:4;
+    grid-row-start:2;
     grid-column-start: 1;
 }
 
 #eight{
-    grid-row-start:4;
+    grid-row-start:2;
     grid-column-start: 2;
 }
 
 #nine{
-    grid-row-start:4;
+    grid-row-start:2;
     grid-column-start: 3;
 }
 
