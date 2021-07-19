@@ -58,11 +58,13 @@ function numInput(){
 // 1. Displays the operand chosen and changes currentNumber to select B.
         function operatorClicked(){
           document.getElementById('display').textContent = (operandUsed);
-          if(equal === '='){
-            calculation();
+          if(operandUsed === previousOperand){
+            operate();
+           operandUsed ==='0';
           }
           else
            { currentNumber = '';
+             previousOperand = operandUsed;
           }
           }
 
@@ -72,6 +74,7 @@ function numInput(){
               equalSign.addEventListener('click', function(){
                 equal = '=';
                   calculation();
+                  previousOperand = operandUsed
               });
 
 
@@ -80,30 +83,29 @@ function numInput(){
 // assigned to the variables. Otherwise, if none of the above are true, we clear.
 
         function calculation(){
-          if(equal === '' && num1 !==''){
-            num2 = num1;
-            equals();
-            result();
-          }
           if(operandUsed === '' || num2 === ''){
             num2 = num1;
-            equals();
-            result();
+            operate();
+            
           }
           if(operandUsed !=='' && num1 !== '' && num2 !== ''){
-            equals();
-            result();
+           operate();
           }
           else{
             allClear();
           }
         }
 
+function operate(){
+      equals();
+      result();
+}
+
   
 function result(){
   document.getElementById('display').textContent = (num1);
   currentNumber = '';
-  previousOperand = operandUsed
+ 
 }
 
 
@@ -136,6 +138,7 @@ function allClear(){
   num2 = '';
   currentNumber = '';
   operandUsed = '0';
+  previousOperand ='';
   document.getElementById('display').textContent = 0;
 
 }
